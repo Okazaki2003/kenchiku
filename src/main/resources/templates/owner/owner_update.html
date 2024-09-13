@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache">
+  <title>BuildManager Dashboard &mdash; SE-PROJECT</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- CSS Libraries -->
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="main-wrapper">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <form class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+          </ul>
+        </form>
+        <ul class="navbar-nav navbar-right">
+          <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+            <img alt="image" src="../../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+            <div class="d-sm-none d-lg-inline-block">高野 圭史</div></a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a href="../login.html" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="../index.html">BUILDMANAGER</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="../index.html">BM</a>
+          </div>
+          <ul class="sidebar-menu">
+
+            
+            <li><a class="nav-link" href="../login.html"><i class="far fa-square"></i> <span>TODO:ログイン画面</span></a></li>
+            <li><a class="nav-link" href="../front/anken.html"><i class="far fa-square"></i> <span>TODO:案件一覧画面</span></a></li>
+
+            <li class="menu-header">マスタ関連</li>
+            <li><a class="nav-link" href="user.html"><i class="fas far fa-user"></i> <span>ユーザ管理</span></a></li>
+            <li><a class="nav-link" href="kengen.html"><i class="fas far fa-user"></i> <span>権限管理</span></a></li>
+            <li><a class="nav-link" href="kokyaku.html"><i class="fas far fa-user"></i> <span>顧客管理</span></a></li>
+            <li><a class="nav-link" href="owner.html"><i class="fas far fa-user"></i> <span>オーナー管理</span></a></li>
+            <li class="menu-header">チェックリスト関連</li>
+            <li><a class="nav-link" href="check_group.html"><i class="fas fa-th"></i> <span style="line-height:1rem">チェック項目グループ<br />管理</span></a></li>
+            <li><a class="nav-link" href="check_group_register.html"><i class="fas fa-th"></i> <span style="line-height:1rem">チェック項目グループ<br />登録・変更</span></a></li>
+            <li><a class="nav-link" href="check_koji_kubun.html"><i class="fas fa-th"></i> <span style="line-height:1rem">チェック項目<br />工事区分管理</span></a></li>
+            <li><a class="nav-link" href="check.html"><i class="fas fa-th"></i> <span>チェック項目管理</span></a></li>
+            <li class="menu-header">工事区分関連</li>
+            <li><a class="nav-link" href="koji_kubun_bunrui.html"><i class="fas fa-th-large"></i> <span>工事区分分類管理</span></a></li>
+            <li><a class="nav-link" href="koji_kubun.html"><i class="fas fa-th-large"></i> <span>工事区分管理</span></a></li>
+            <li><a class="nav-link" href="shizai_maker.html"><i class="fas fa-th-large"></i> <span>資材メーカー管理</span></a></li>
+            <li><a class="nav-link" href="gyosya_shiiresaki.html"><i class="fas fa-th-large"></i> <span>業者・仕入れ先管理</span></a></li>
+            <li class="menu-header">物件関連</li>
+            <li><a class="nav-link" href="bukken_madori.html"><i class="fas fa-map-marker-alt"></i> <span>物件間取り名称管理</span></a></li>
+            <li><a class="nav-link" href="bukken.html"><i class="fas fa-map-marker-alt"></i> <span>物件管理</span></a></li>
+            <li class="menu-header">業務関連</li>
+            <li><a class="nav-link" href="anken.html"><i class="fas fa-pencil-ruler"></i> <span>案件管理</span></a></li>
+            <li><a class="nav-link" href="mitsumori.html"><i class="fas fa-pencil-ruler"></i> <span>見積管理</span></a></li>
+            <li><a class="nav-link" href="juchu.html"><i class="fas fa-pencil-ruler"></i> <span>受注管理</span></a></li>
+            <li><a class="nav-link" href="hattyu.html"><i class="fas fa-pencil-ruler"></i> <span>発注管理</span></a></li>
+            <li><a class="nav-link" href="seikyu.html"><i class="fas fa-pencil-ruler"></i> <span>請求管理</span></a></li>
+            <li class="menu-header">工程表</li>
+            <li><a class="nav-link" href="kouteihyo.html"><i class="far fa-file-alt"></i> <span>月別工程表出力</span></a></li>
+            
+
+            </ul>
+        </aside>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>オーナー管理</h1>
+          </div>
+          
+          <div class="section-body">
+            <h2 class="section-title mb-5">オーナー変更</h2>
+            <p class="section-lead">
+              <!-- We use 'DataTables' made by @SpryMedia. You can check the full documentation <a href="https://datatables.net/">here</a>. -->
+            </p>
+
+            <div class="row">
+              <div class="col-12 col-lg-8">
+                <form method="post" action="owner_update_confirm.html">
+                <div class="card">
+                  <div class="card-body">
+                    
+                    <div class="form-group">
+                      <h6>顧客名<span class="badge badge badge-danger ml-1 mt-0">必須</span></h6>
+                      <select class="form-control w-50">
+                        <option>株式会社A</option>
+                        <option>株式会社B</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <h6>個人・法人区分<span class="badge badge badge-danger ml-1 mt-0">必須</span></h6>
+                      <select class="form-control w-50">
+                        <option>法人</option>
+                        <option>個人</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <h6>法人名</h6>
+                      <input type="text" class="form-control">
+                      <small id="" class="form-text text-muted">
+                        
+                      </small>
+                    </div>
+                    
+                    <div class="form-group">
+                      <h6>法人名カナ</h6>
+                      <input type="text" class="form-control">
+                      <small id="" class="form-text text-muted">
+                        
+                      </small>
+                    </div>
+                    
+                    <div class="form-group">
+                      <h6>部署</h6>
+                      <input type="text" class="form-control">
+                      <small id="" class="form-text text-muted">
+                        
+                      </small>
+                    </div>
+                    
+                    <div class="form-group w-50 float-left p-1">
+                      <h6>姓<span class="badge badge-danger ml-1 mt-0">必須</span></h6>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group p-1">
+                      <h6>名<span class="badge badge-danger ml-1 mt-0">必須</span></h6>
+                      <input type="text" class="form-control w-50">
+                    </div>
+                    <div class="form-group w-50 float-left p-1">
+                      <h6>姓カナ<span class="badge badge-danger ml-1 mt-0">必須</span></h6>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group p-1">
+                      <h6>名カナ<span class="badge badge-danger ml-1 mt-0">必須</span></h6>
+                      <input type="text" class="form-control w-50">
+                    </div>
+
+                    <div class="form-group">
+                      <h6>郵便番号</h6>
+                      <input type="text" class="form-control">
+                      <small id="" class="form-text text-muted">
+                        
+                      </small>
+                    </div>
+                    
+                    <div class="form-group">
+                      <h6>都道府県<span class="badge badge badge-danger ml-1 mt-0">必須</span></h6>
+                      <select class="form-control w-50">
+                        <option>東京都</option>
+                        <option>埼玉県</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <h6>住所</h6>
+                      <input type="text" class="form-control">
+                      <small id="" class="form-text text-muted">
+                        
+                      </small>
+                    </div>
+
+                    <div class="form-group">
+                      <h6>建物名</h6>
+                      <input type="text" class="form-control">
+                      <small id="" class="form-text text-muted">
+                        
+                      </small>
+                    </div>
+
+                    <div class="form-group">
+                      <h6>電話番号</h6>
+                      <input type="text" class="form-control">
+                      <small id="" class="form-text text-muted">
+                        0x0-0000-1111のような書式で入力してください
+                      </small>
+                    </div>
+
+                    <div class="form-group">
+                      <h6>携帯番号</h6>
+                      <input type="text" class="form-control">
+                      <small id="" class="form-text text-muted">
+                        0x0-0000-1111のような書式で入力してください
+                      </small>
+                    </div>
+
+                    <div class="form-group">
+                      <h6>メールアドレス</h6>
+                      <input type="email" class="form-control">
+                      <small id="" class="form-text text-muted">
+                      </small>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="section-body">
+                  <div class="buttons">
+                    <a
+                      href="owner.html"
+                      class="btn btn-light btn-lg"
+                      >前の画面へ戻る</a
+                    >
+                    <button type="submit" class="btn btn-success btn-lg">確認</button>
+                  </div>
+                </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; se-project 2024
+        </div>
+        <div class="footer-right">
+          2.3.0
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="../../assets/js/stisla.js"></script>
+
+  <!-- JS Libraies -->
+
+  <!-- Template JS File -->
+  <script src="../../assets/js/scripts.js"></script>
+  <script src="../../assets/js/custom.js"></script>
+
+  <!-- Page Specific JS File -->
+  
+</body>
+</html>

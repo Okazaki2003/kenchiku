@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache">
+  <title>BuildManager Dashboard &mdash; SE-PROJECT</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="../../../develop/volumes/web/static/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../../develop/volumes/web/static/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="main-wrapper">
+      <div class="navbar-bg"></div>
+      <div class="insert" th:insert="~{common/main-navbar :: main-navbar}"></div>
+      <div class="insert" th:insert="~{common/sidebar :: sidebar}"></div>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="../index.html">BUILDMANAGER</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="../index.html">BM</a>
+          </div>
+          <ul class="sidebar-menu">
+
+            
+            <li><a class="nav-link" href="../login.html"><i class="far fa-square"></i> <span>TODO:ログイン画面</span></a></li>
+            <li><a class="nav-link" href="../front/anken.html"><i class="far fa-square"></i> <span>TODO:案件一覧画面</span></a></li>
+
+            <li class="menu-header">マスタ関連</li>
+            <li><a class="nav-link" href="user.html"><i class="fas far fa-user"></i> <span>ユーザ管理</span></a></li>
+            <li><a class="nav-link" href="kengen.html"><i class="fas far fa-user"></i> <span>権限管理</span></a></li>
+            <li><a class="nav-link" href="kokyaku.html"><i class="fas far fa-user"></i> <span>顧客管理</span></a></li>
+            <li><a class="nav-link" href="owner.html"><i class="fas far fa-user"></i> <span>オーナー管理</span></a></li>
+            <li class="menu-header">チェックリスト関連</li>
+            <li><a class="nav-link" href="check_group.html"><i class="fas fa-th"></i> <span style="line-height:1rem">チェック項目グループ<br />管理</span></a></li>
+            <li><a class="nav-link" href="check_group_register.html"><i class="fas fa-th"></i> <span style="line-height:1rem">チェック項目グループ<br />登録・変更</span></a></li>
+            <li><a class="nav-link" href="check_koji_kubun.html"><i class="fas fa-th"></i> <span style="line-height:1rem">チェック項目<br />工事区分管理</span></a></li>
+            <li><a class="nav-link" href="check.html"><i class="fas fa-th"></i> <span>チェック項目管理</span></a></li>
+            <li class="menu-header">工事区分関連</li>
+            <li><a class="nav-link" href="koji_kubun_bunrui.html"><i class="fas fa-th-large"></i> <span>工事区分分類管理</span></a></li>
+            <li><a class="nav-link" href="koji_kubun.html"><i class="fas fa-th-large"></i> <span>工事区分管理</span></a></li>
+            <li><a class="nav-link" href="shizai_maker.html"><i class="fas fa-th-large"></i> <span>資材メーカー管理</span></a></li>
+            <li><a class="nav-link" href="gyosya_shiiresaki.html"><i class="fas fa-th-large"></i> <span>業者・仕入れ先管理</span></a></li>
+            <li class="menu-header">物件関連</li>
+            <li><a class="nav-link" href="bukken_madori.html"><i class="fas fa-map-marker-alt"></i> <span>物件間取り名称管理</span></a></li>
+            <li><a class="nav-link" href="bukken.html"><i class="fas fa-map-marker-alt"></i> <span>物件管理</span></a></li>
+            <li class="menu-header">業務関連</li>
+            <li><a class="nav-link" href="anken.html"><i class="fas fa-pencil-ruler"></i> <span>案件管理</span></a></li>
+            <li><a class="nav-link" href="mitsumori.html"><i class="fas fa-pencil-ruler"></i> <span>見積管理</span></a></li>
+            <li><a class="nav-link" href="juchu.html"><i class="fas fa-pencil-ruler"></i> <span>受注管理</span></a></li>
+            <li><a class="nav-link" href="hattyu.html"><i class="fas fa-pencil-ruler"></i> <span>発注管理</span></a></li>
+            <li><a class="nav-link" href="seikyu.html"><i class="fas fa-pencil-ruler"></i> <span>請求管理</span></a></li>
+            <li class="menu-header">工程表</li>
+            <li><a class="nav-link" href="kouteihyo.html"><i class="far fa-file-alt"></i> <span>月別工程表出力</span></a></li>
+            
+
+            </ul>
+        </aside>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>オーナー管理</h1>
+          </div>
+          
+          <div class="section-body">
+            <!-- <h2 class="section-title">DataTables</h2>
+            <p class="section-lead">
+              We use 'DataTables' made by @SpryMedia. You can check the full documentation <a href="https://datatables.net/">here</a>.
+            </p> -->
+
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <a href="owner_register.html" class="btn btn-primary btn-lg btn w-25">新規作成</a>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped" id="owner-table">
+                        <thead>
+                          <tr>
+                            <th class="text-center">
+                            </th>
+                            <th>ステータス</th>
+                            <th>顧客名</th>
+                            <th>オーナー名<br />オーナー名カナ</th>
+                            <th>法人名<br />法人名カナ</th>
+                            <th>郵便番号<br />住所、建物名</th>
+                            <th>メールアドレス</th>
+                            <th>電話番号<br />携帯番号</th>
+                            <th>登録日<br />更新日</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tbody">
+                          <tr>
+                            <td>
+                              <a href="owner_update.html" class="btn btn-primary">変更</a>
+                            </td>
+                            <td>
+                              <div class="form-group mb-0">
+                                <label class="custom-switch mt-2 pl-0">
+                                  <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked>
+                                  <span class="custom-switch-indicator"></span>
+                                  <span class="custom-switch-description">有効</span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>
+                              <span>株式会社〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</span>
+                            </td>
+                            <td class="">
+                              <span>テスト太郎</span><br />
+                              <span>テスト太郎</span>
+                            </td>
+                            <td>
+                              <span>株式会社〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</span>
+                            </td>
+                            <td>
+                              <span>123-4567</span><br />
+                              <span>東京都足立区〇〇〇〇〇〇　××ビル3階</span>
+                            </td>
+                            <td>
+                              <span>test@se-project.co.jp</span>
+                            </td>
+                            <td>
+                              <span>012-345-6789</span><br />
+                              <span>012-345-6789</span>
+                            </td>
+                            <td>
+                              <span>2024/05/25 01:02:03</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a href="owner_update.html" class="btn btn-primary">変更</a>
+                            </td>
+                            <td>
+                              <div class="form-group mb-0">
+                                <label class="custom-switch mt-2 pl-0">
+                                  <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked>
+                                  <span class="custom-switch-indicator"></span>
+                                  <span class="custom-switch-description">有効</span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>
+                              <span>株式会社〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</span>
+                            </td>
+                            <td class="">
+                              <span>テスト太郎</span><br />
+                              <span>テスト太郎</span>
+                            </td>
+                            <td>
+                              <span>株式会社〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</span>
+                            </td>
+                            <td>
+                              <span>123-4567</span><br />
+                              <span>東京都足立区〇〇〇〇〇〇　××ビル3階</span>
+                            </td>
+                            <td>
+                              <span>test@se-project.co.jp</span>
+                            </td>
+                            <td>
+                              <span>012-345-6789</span><br />
+                              <span>012-345-6789</span>
+                            </td>
+                            <td>
+                              <span>2024/05/25 01:02:03</span>
+                            </td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; se-project 2024
+        </div>
+        <div class="footer-right">
+          2.3.0
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div id="updatemodal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">変更が完了しました</h5>
+        </div>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="../../assets/js/stisla.js"></script>
+
+  <!-- JS Libraies -->
+  <!-- <script src="../../../develop/volumes/web/static/node_modules/datatables/media/js/jquery.dataTables.min.js"></script> -->
+  <script src="../../assets/js/admin/jquery.dataTables.custom.js"></script>
+  <script src="../../../develop/volumes/web/static/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="../../../develop/volumes/web/static/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
+  <script src="../../../develop/volumes/web/static/node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
+
+  <!-- Template JS File -->
+  <script src="../../assets/js/scripts.js"></script>
+  <script src="../../assets/js/custom.js"></script>
+
+  <!-- Page Specific JS File -->
+  <script src="../../assets/js/page/modules-datatables.js"></script>
+  
+  <script>
+    //TODO: ダミーデータ投入
+
+    var tr_text = `
+                          <tr>
+                            <td>
+                              <a href="owner_update.html" class="btn btn-primary">変更</a>
+                            </td>
+                            <td>
+                              <div class="form-group mb-0">
+                                <label class="custom-switch mt-2 pl-0">
+                                  <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked>
+                                  <span class="custom-switch-indicator"></span>
+                                  <span class="custom-switch-description">有効</span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>
+                              <span>株式会社〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</span>
+                            </td>
+                            <td class="">
+                              <span>テスト太郎</span><br />
+                              <span>テスト太郎</span>
+                            </td>
+                            <td>
+                              <span>株式会社〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</span>
+                            </td>
+                            <td>
+                              <span>123-4567</span><br />
+                              <span>東京都足立区〇〇〇〇〇〇　××ビル3階</span>
+                            </td>
+                            <td>
+                              <span>test@se-project.co.jp</span>
+                            </td>
+                            <td>
+                              <span>012-345-6789</span><br />
+                              <span>012-345-6789</span>
+                            </td>
+                            <td>
+                              <span>2024/05/25 01:02:03</span>
+                            </td>
+                          </tr>`
+
+    var tr = [];
+    for (var i = -1; ++i < 1000;) {
+      tr.push(tr_text);
+    }
+    $("tbody").append(tr.join(""));
+
+    $.extend( $.fn.dataTable.defaults, { 
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+        } 
+    }); 
+
+    //データテーブルの初期化
+      
+      let table = $("#owner-table").dataTable({
+        columnDefs: [{  }],
+        order: [],
+        columns: [
+          { orderable: false },
+          { orderDataType: "dom-checkbox", type: "string"  }, //チェックボックスのソートを可能にする
+          { orderable: true },
+          { orderable: true },
+          { orderable: true },
+          { orderable: true },
+          { orderable: true },
+          { orderable: true },
+          { orderable: true },
+        ],
+        deferRender: false,
+      });
+
+    
+
+    $(window).resize(function(){
+      // 画面幅が小さいとすべて表示しきれないので一部を非表示にして対応
+      const width = $(window).width();
+      console.log(width);
+      if (width < 800) {
+        table.fnSetColumnVis( 5, false );
+      } else {
+        table.fnSetColumnVis( 5, true );
+      }
+    });
+
+  </script>
+    <script src="../../assets/js/admin/sep.dataTables.common.js"></script>
+    <script src="../../assets/js/admin/sep.dataTables.toggle.js"></script>
+
+
+</body>
+</html>
